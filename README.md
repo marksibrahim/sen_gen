@@ -13,3 +13,6 @@ perhaps incorporate emotional equations, i.e. combine emotions for a nuanced emo
 ###Ideas
 - scrap web source of text
 - use thesaurus to identify emotional content
+
+### Resources
+http://blog.ayoungprogrammer.com/2015/09/a-simple-artificial-intelligence.html
