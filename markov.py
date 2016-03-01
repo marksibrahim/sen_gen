@@ -1,4 +1,5 @@
 import random
+# implementation from gist: https://gist.github.com/dellis23/6174914
 
 class Markov(object):
 
@@ -59,7 +60,7 @@ class Markov(object):
 		gen_words = []
 		seed_words = self.words_at_position(seed)[:-1]
 		gen_words.extend(seed_words)
-		for i in xrange(size):
+		for i in range(size):
 			last_word_len = self.chain_size - 1
 			last_words = gen_words[-1 * last_word_len:]
 			next_word = random.choice(self.cache[tuple(last_words)])
