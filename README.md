@@ -5,6 +5,31 @@
 * accept or reject sentence based on fit with the rest of story theme
     * as well as tense
 
+## Building the Story
+
+Theme: greed is downfall
+
+Setup: 
+P: protagonist
+    P = proper name + adj
+G: goal
+    G = [list based on theme]
+    * in here there should an action and an objective
+O: opponent
+    O = proper name + adj (based on goal)
+
+sample list of goals
+objective = [wealth: bit coin, rare coin collection, stock market investments, 
+real estate, mortgage, coffee trade]
+actions = [theft, deal, money launder, trade]
+
+setting = [bank]
+
+hurdle = [regulation, illegality, market crash]
+
+
+
+
 ## Data
 * Corpus of 3.5 million words from short stories.
 
