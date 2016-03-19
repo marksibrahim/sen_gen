@@ -28,6 +28,27 @@ setting = [bank]
 hurdle = [regulation, illegality, market crash]
 
 
+### Story Structure : love story
+
+1. introduce protagonist + setting
+    proper name + adj + lives + proper place.
+2. introduce goal
+    a. protagonist unfulfilled:
+    maybe loneliness
+    P + feeling + syn to lonely.
+    There existed a beautiful [proper name].
+3. seemingly successful pursuit of goal
+    P meets G in [setting]
+    agree to see each other again.
+4. introduce oppponent
+    Introduce opponent.
+    Opponent sways G.
+5. overcome challenge
+    P + feels defeated
+    P + verb + (courage) 
+6. resolution
+    G + P live happily ever after.
+
 
 
 ## Data
