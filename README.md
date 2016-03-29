@@ -79,6 +79,30 @@ the one that fits the shape we desire.
 - sad
 perhaps incorporate emotional equations, i.e. combine emotions for a nuanced emotion. 
 
+### Themes and Story Parts
+''' Python
+    themes = ["love", "death", "jealousy", "corruption"]
+
+    openings = ["meeting"]
+    first_actions = ["marriage"]
+    first_reversals = ["death"]
+
+    first_reactions = ["funeral"]
+    # about first reaction and theme
+    dialogue_theme = ["love dialogue"]
+    closing_first_reactions = ["burial"]
+    feelings_first_reactions = ["sadness"]
+
+    second_actions = ["meeting"]
+    # more about theme, surprising
+    dialogue_reversals = ["love dialogue"]
+
+    third_actions = ["second marriage"]
+    fourth_actions = ["meeting"]
+    dialogue_conclusions = ["love"]
+    resolutions = ["love"]
+'''
+
 ## Things to Ponder
 * how do we keep track of characters?
 * themes? emotional content to create flow?
