@@ -3,6 +3,8 @@ authors a short story based on a theme
 """
 
 
+import random
+
 class Story():
     """
     theme
@@ -12,23 +14,26 @@ class Story():
     setting
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, noun_prompt):
+        """
+        global variables for our story
+        """
+        self.noun_prompt = noun_prompt
 
-    def generate_p1(self):
-        """
-        generates opening paragraph
-        """
-        pass
+        self.characters = {}
+        self.theme =  "love"
 
-    def generate_p2(self):
+    def gen_character(self, gender):
         """
-        generates conflict paragraph
+        returns a character name based given gender
+        TODO: Keri to fill in functionality
         """
-        pass
+        name = "Tom"
+        return name
 
-    def generate_p3(self):
-        """
-        generates resolution paragraph
-        """
-        pass
+
+if __name__ == "__main__":
+    our_story = Story()
+
+    print(" ")
+    

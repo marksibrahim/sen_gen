@@ -36,7 +36,6 @@ class First_Par():
                 'cold winter': self.cafe
                 }
 
-
     def gen_meeting(self):
         """
         characters meet in setting
