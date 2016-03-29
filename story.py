@@ -2,7 +2,7 @@
 authors a short story based on a theme
 """
 
-
+from nltk.corpus import names
 import random
 
 class Story():
@@ -26,10 +26,15 @@ class Story():
     def gen_character(self, gender):
         """
         returns a character name based given gender
-        TODO: Keri to fill in functionality
         """
-        name = "Tom"
-        return name
+        if gender == "male":
+            name = random.choice([(name) for name in names.words('male.txt')])
+            pronoun = "he"
+        else:
+            name = random.choice([(name) for name in names.words('female.txt')])
+            pronoun = "she"
+
+        return name, pronoun
 
 
 if __name__ == "__main__":
