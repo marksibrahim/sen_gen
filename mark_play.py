@@ -18,9 +18,6 @@ class First_Par():
     generates first paragraph where our 
     protagonists meet
     """
-
-
-    
     def __init__(self):
         """
         story variables

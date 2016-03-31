@@ -5,6 +5,8 @@ authors a short story based on a theme
 from nltk.corpus import names
 import random
 
+import par1, par2
+
 class Story():
     """
     theme
@@ -20,7 +22,7 @@ class Story():
         """
         self.noun_prompt = noun_prompt
 
-        self.characters = {}
+        self.characters = ["Charlie", "Julie"]
         self.theme =  "love"
 
     def gen_character(self, gender):
@@ -36,9 +38,15 @@ class Story():
 
         return name, pronoun
 
+    def author_story(self):
+        """
+        calls par modules to create story
+        """
+        self.par1 = par1.Par1(self).draft_par()
+        self.par2 = par2.Par2(self).draft_par()
+        return self.par1 + "\n" + self.par2
+
 
 if __name__ == "__main__":
-    our_story = Story()
-
-    print(" ")
-    
+    our_story = Story("dog")
+    print(our_story.author_story())
