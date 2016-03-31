@@ -3,6 +3,7 @@ generates first paragraph based on elements in story.py
 """
 
 import random
+from nltk.corpus import wordnet as wn
 
 #create story instance to use in generation of first paragraph
 
@@ -40,7 +41,8 @@ class Par1():
         """
         characters tell children about the air that day
         """
-        s3 = "They would tell their children about the "
+        #tell = [w.lemma_name for w in wn.synsets('tell')]
+        s3 = "They would" + "tell" + "their children about the "
         s3 += self.season + " air the day they met."
         s4 = "They just knew."
         return s3 + " " + s4

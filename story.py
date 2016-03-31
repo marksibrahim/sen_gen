@@ -5,7 +5,7 @@ authors a short story based on a theme
 from nltk.corpus import names
 import random
 
-import par1, par2
+import par1, par2, par3
 
 class Story():
     """
@@ -21,8 +21,13 @@ class Story():
         global variables for our story
         """
         self.noun_prompt = noun_prompt
-
-        self.characters = ["Charlie", "Julie"]
+        narrator = "I"
+        self.characters = [ self.gen_character("male"), 
+                            self.gen_character("female"),
+                            narrator, 
+                            self.gen_character("female"),
+                            self.gen_character("male"), 
+                            ]
         self.theme =  "love"
 
     def gen_character(self, gender):
@@ -37,6 +42,15 @@ class Story():
             pronoun = "she"
 
         return name, pronoun
+
+    def return_possesive(self, gender, pov, plural=False):
+        """
+        returns possessive based on gender and number
+        pov is point of view: 
+            first person, second person, third person, and it
+        e.g, return_possessive("male", "third", plural=True)
+        """
+        pass
 
     def author_story(self):
         """
