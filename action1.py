@@ -32,5 +32,5 @@ class Action1():
         return s2 + s3 + s4 
 
     def draft(self):
-        return  self.gen_marriage() + self.describe_narrator()
+        return  self.gen_marriage() + self.describe_narrator() + str(self.story.test_var)
 

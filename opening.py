@@ -25,6 +25,8 @@ class Opening():
                 'crisp fall': self.cafe,
                 'cold winter': self.cafe
                 }
+        #test variable
+        self.story.test_var = 17
 
     def gen_meeting(self):
         """
