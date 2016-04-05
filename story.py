@@ -5,7 +5,7 @@ authors a short story based on a theme
 from nltk.corpus import names
 import random
 
-import par1, par2, par3
+import opening, action1
 
 class Story():
     """
@@ -56,9 +56,9 @@ class Story():
         """
         calls par modules to create story
         """
-        self.par1 = par1.Par1(self).draft_par()
-        self.par2 = par2.Par2(self).draft_par()
-        return self.par1 + "\n" + self.par2
+        self.opening = opening.Opening(self).draft()
+        self.action1 = action1.Action1(self).draft()
+        return self.opening + "\n" + self.action1
 
 
 if __name__ == "__main__":

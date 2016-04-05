@@ -8,7 +8,7 @@ from nltk.corpus import wordnet as wn
 #create story instance to use in generation of first paragraph
 
 
-class Par1():
+class Opening():
     """
     drafts first paragraph based on elemnts in 
     instance of story provided
@@ -32,7 +32,7 @@ class Par1():
         s1 = June and Charlie met on a summer day.
         s2 = 
         """
-        s1 = self.story.characters[0] + " and " + self.story.characters[1]
+        s1 = self.story.characters[0][0] + " and " + self.story.characters[1][0]
         s1 += " met on a "  + self.season + " day."
         s2 = self.setting_description[self.season]
         return s1 + " " + s2
@@ -47,6 +47,6 @@ class Par1():
         s4 = "They just knew."
         return s3 + " " + s4
 
-    def draft_par(self):
+    def draft(self):
         return  self.gen_meeting() + self.tell_children()
 

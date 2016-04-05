@@ -7,7 +7,7 @@ import random
 #create story instance to use in generation of first paragraph
 
 
-class Par2():
+class Action1():
     """
     drafts second paragraph based on elemnts in 
     instance of story provided
@@ -31,6 +31,6 @@ class Par2():
         s4 += "go down."
         return s2 + s3 + s4 
 
-    def draft_par(self):
+    def draft(self):
         return  self.gen_marriage() + self.describe_narrator()
 
