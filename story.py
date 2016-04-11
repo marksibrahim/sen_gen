@@ -5,7 +5,7 @@ authors a short story based on a theme
 from nltk.corpus import names
 import random
 
-import opening, action1
+import opening, action1, action2
 
 class Story():
     """
@@ -21,10 +21,10 @@ class Story():
         global variables for our story
         """
         self.noun_prompt = noun_prompt
-        narrator = "I"
+        self.narrator = "I"
         self.characters = [ self.gen_character("male"), 
                             self.gen_character("female"),
-                            narrator, 
+                            self.narrator, 
                             self.gen_character("female"),
                             self.gen_character("male"), 
                             ]
@@ -58,6 +58,7 @@ class Story():
         """
         self.opening = opening.Opening(self).draft()
         self.action1 = action1.Action1(self).draft()
+        self.action2 = action2.Action2(self).draft()
         return self.opening + "\n" + self.action1
 
 
