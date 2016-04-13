@@ -116,3 +116,14 @@ class Character():
 
         return ch
 
+
+class CharacterDetails():
+
+    def __init__(self):
+
+        self.body_part1 = "hair"
+        self.body_part2 = "hands"
+        
+
+    def create_character(self):
+    
