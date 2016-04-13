@@ -4,6 +4,7 @@
 # In[6]:
 
 import random
+from collections import defaultdict
 
 """
 SEASONS: randomly generates a dictionary of seasons-by-plot-section for story 1
@@ -36,7 +37,29 @@ def gen_seasons():
 
 
 """
+SETTING
+"""
+
+def gen_setting_sentences():
+
+    setting_sAB = defaultdict(dict)
+
+    setting_sAB['fall']['sA'] = "the wind was blowing so hard, "
+    setting_sAB['fall']['sB'] = "the air rushed into their mouths until they couldn't breathe"
+    setting_sAB['fall']['sC'] = "the wind was blowing so hard it sucked the breath out of the sparrows"
+    setting_sAB['winter']['sA'] = "it was so cold the walnut trees were exploding like gunshots, "
+    setting_sAB['winter']['sB'] = "the air was so thin it was hard to breath"
+    setting_sAB['spring']['sA'] = "the sky was stuffed round with rain clouds"
+    setting_sAB['spring']['sB'] = "the air was a shimmering gray that was hard to look at"
+    setting_sAB['summer']['sA'] = "it was so hot the grass was laying down yellow in exhaustion"
+    setting_sAB['summer']['sB'] = "the air was so heavy it was hard to breath"
+
+    return setting_sAB
+ 
+
+"""
 THEME:  generates a dictionary of theme elements based on supplied word
+theme[]
 """
 def gen_theme(noun):
     
@@ -47,6 +70,7 @@ def gen_theme(noun):
         adj_question = "fragile" 
         phrase = "the air was sucked out of possessive lungs"
         protag_condition = "to be alone"
+        action1_adj = "hopeless"
         resolution_adj = "hopeful"
 
         theme = {'noun': noun, 
@@ -55,6 +79,7 @@ def gen_theme(noun):
                  'adj_question': adj_question, 
                  'phrase': phrase, 
                  'protag_condition': protag_condition,
+                 'action1_adj': action1_adj, 
                  'resolution_adj': resolution_adj
                 }
         
@@ -63,6 +88,7 @@ def gen_theme(noun):
 
 """
 SYMBOLS:  generates a dictionary of symbols based on supplied word
+symbol[]
 """
 def gen_symbols(noun):
 
@@ -73,6 +99,7 @@ def gen_symbols(noun):
         adj_temp = "cool"
         adj_weight = "heavy"
         adj_weight_opposite = "light"
+        excuse = "the weather"
         
         symbol = {'noun': noun,
                   'assoc_noun': assoc_noun, 
@@ -80,6 +107,7 @@ def gen_symbols(noun):
                   'adj_temp': adj_temp, 
                   'adj_weight': adj_weight, 
                   'adj_weight_opposite': adj_weight_opposite
+                  'excuse': excuse
                  }
 
     return symbol
@@ -88,6 +116,7 @@ def gen_symbols(noun):
 """
 FOR ACTION 1 & SURPRISE SECTIONS: generates a dictionary of elements that are used in 
 Action1 section and Surprise Event section, based on supplied noun
+a1_surprise[]
 """
 def gen_action1_and_surprise(noun):
     
@@ -97,7 +126,7 @@ def gen_action1_and_surprise(noun):
         action1_vb_addtl_ch = "the groom"
         action1_vb_addtl_ch_possession = "a condo"
         surprise_n = "death"
-        surprise_v = "died"
+        surprise_v = "die"
         surprise_opposite_adj = "lucky"
         
         a1_surprise = {'action1_vb': action1_vb, 
