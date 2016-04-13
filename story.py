@@ -2,10 +2,12 @@
 authors a short story based on a theme
 """
 
-from nltk.corpus import names
 import random
+from nltk.corpus import names
 
 import opening, action1, action2
+
+from tools import generate_sentence
 
 class Story():
     """
@@ -29,6 +31,9 @@ class Story():
                             self.gen_character("male"), 
                             ]
         self.theme =  "love"
+        #instantiate markov sentence generator
+            # to use call method: generate_sents_w_noun("dog")
+        self.gen_sentences = generate_sentence.Sentences()
 
     def gen_character(self, gender):
         """
