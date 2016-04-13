@@ -28,15 +28,11 @@ class Markov(object):
 		"""Generates chains from the given data string based on passed chain size.
 
 		So if our string were:
-
 			"What a lovely day"
 
 		With a chain size of 3, we'd generate:
-
 			(What, a, lovely)
-
 		and
-
 			(a, lovely, day)
 		"""
 

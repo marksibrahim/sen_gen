@@ -22,21 +22,21 @@ class Story():
         raw_sen_text = self.markov_generator.generate_markov_text(size=200)
         sentence_list = sent_tokenize(raw_sen_text)
         sentence_list.pop(0)
-        sentence_list.pop()
+        #return all except the last sentence
+        return sentence_list[:-1]
 
-        return sentence_list[0]
 
-
-    def generate_sents_w_noun(self, noun, num=1):
+    def generate_sents_w_noun(self, noun, num=5):
         """
         generates the given number of sentences with the given noun
         returns a list of sentences
         """
         sentences = [] 
-        for i in range(num*100):
-            sent = self.generate_sentence()
-            if noun in sent:
-                sentences.append(sent)
+        for i in range(num*800):
+            sents = self.generate_sentence()
+            for sent in sents:
+                if noun in sent:
+                    sentences.append(sent)
             #exit if enough sentences are generated
             if len(sentences) > num:
                 break
