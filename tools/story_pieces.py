@@ -37,7 +37,7 @@ def gen_seasons():
 
 
 """
-SETTING
+SETTINGS
 """
 
 def gen_setting_sentences():
@@ -55,7 +55,25 @@ def gen_setting_sentences():
     setting_sAB['summer']['sB'] = "the air was so heavy it was hard to breath"
 
     return setting_sAB
- 
+
+
+"""
+PLACES
+"""
+def gen_event():
+
+    event = defaultdict(dict)
+
+    event['relationship']['event1'] = "wedding"
+    event['relationship']['event1_v'] = "was sitting"
+    event['relationship']['event2'] = "at the funeral"
+    event['relationship']['event2_v'] = "sat"
+    event['relationship']['location'] = "in the first row"
+    event['relationship']['event2_v2'] = "buried"
+    event['relationship']['noun'] = "ashes"
+
+    return event
+
 
 """
 THEME:  generates a dictionary of theme elements based on supplied word
@@ -65,6 +83,7 @@ def gen_theme(noun):
     
     if noun == "relationship":
         noun = "love"
+        n_adj = "short"
         verb = "love"
         adj = "romantic"
         adj_question = "fragile" 
@@ -74,6 +93,7 @@ def gen_theme(noun):
         resolution_adj = "hopeful"
 
         theme = {'noun': noun, 
+                 'n_adj': n_adj, 
                  'verb': verb, 
                  'adj': adj, 
                  'adj_question': adj_question, 
@@ -96,17 +116,23 @@ def gen_symbols(noun):
         noun = "box"
         assoc_noun = "bookcase"
         adj = "stone"
+        adj_aux = "small"
+        adj_prop = "hollow in the center"
         adj_temp = "cool"
         adj_weight = "heavy"
-        adj_weight_opposite = "light"
+        adj_weight_opposite1 = "weightless"
+        adj_weight_opposite2 = "light"
         excuse = "the weather"
         
         symbol = {'noun': noun,
                   'assoc_noun': assoc_noun, 
-                  'adj': adj, 
+                  'adj': adj,
+                  'adj_aux': adj_aux, 
+                  'adj_prop': adj_prop, 
                   'adj_temp': adj_temp, 
                   'adj_weight': adj_weight, 
-                  'adj_weight_opposite': adj_weight_opposite
+                  'adj_weight_opposite1': adj_weight_opposite1, 
+                  'adj_weight_opposite2': adj_weight_opposite2, 
                   'excuse': excuse
                  }
 
