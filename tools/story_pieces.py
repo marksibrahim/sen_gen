@@ -78,7 +78,7 @@ theme[]
 """
 def gen_theme(story_type):
     
-  if story_type == 1:
+  if story_type == "1":
 
     noun = "love"
     n_adj = "short"

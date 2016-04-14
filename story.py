@@ -18,8 +18,8 @@ class Story():
         # HERE, WE NEED TO PARSE OUT NOUN PROMPT AND ASSIGN STORY CATEGORY
 
         # generate character and story pieces based on noun prompt
-        self.gen_character(1)
-        self.gen_story_pieces(1)
+        self.gen_character("1")
+        self.gen_story_pieces("1")
 
         #instantiate markov sentence generator
             # to use call method: generate_sents_w_noun("dog")
