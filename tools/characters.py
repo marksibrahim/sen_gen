@@ -22,12 +22,10 @@ class Character():
         '''
         if self.gender == 'male':
             first_name = random.choice([(name) for name in names.words('male.txt')])
-            ch = {'gender': 'male'}
+            ch = {'gender': 'male', 'first_name': first_name}
         else:
             first_name = random.choice([(name) for name in names.words('female.txt')])
-            ch = {'gender': 'female'}
-            
-        ch = ch.update({'first_name': first_name})
+            ch = {'gender': 'female', 'first_name': first_name}
 
         '''
         returns pronouns based on:
@@ -117,15 +115,3 @@ class Character():
             ch.update(pronouns)
 
         return ch
-
-
-class CharacterDetails():
-
-    def __init__(self):
-
-        self.body_part1 = "hair"
-        self.body_part2 = "hands"
-        
-
-    def create_character(self):
-    
