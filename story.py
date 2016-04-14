@@ -80,13 +80,13 @@ class Story():
 
         self.action2 = action2.Action2(self).gen_action2()
         """
-        self.action3 = action3.Action1(self).gen_action3()
-        self.action4 = action4.Action1(self).gen_action4()
-        self.action5 = action5.Action1(self).gen_action5()
-        self.action6 = action6.Action1(self).gen_action6()
-        self.action7 = action7.Action1(self).gen_action7()
-        self.action8 = action8.Action1(self).gen_action8()
-        self.action9 = action9.Action1(self).gen_action9()
+        self.action3 = action3.Action2(self).gen_action3()
+        self.action4 = action4.Action3(self).gen_action4()
+        self.action5 = action5.Action4(self).gen_action5()
+        self.action6 = action6.Action5(self).gen_action6()
+        self.action7 = action7.Action6(self).gen_action7()
+        self.action8 = action8.Action7(self).gen_action8()
+        self.action9 = action9.Action8(self).gen_action9()
         """
 
         return self.action1 + "\n"
