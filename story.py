@@ -30,7 +30,7 @@ class Story():
 
         #instantiate markov sentence generator
             # to use call method: generate_sents_w_noun("dog")
-        # self.gen_sentences = generate_sentence.Sentences()
+        self.gen_sentences = generate_sentence.Sentences()
 
 
     def gen_character(self, story_type):
@@ -158,11 +158,6 @@ class Noun_Prompt():
             self.abstraction = False
             self.category = False
 
-            
-        
-
-
-          
 
 if __name__ == "__main__":
     our_story = Story("dog")
