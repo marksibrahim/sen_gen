@@ -14,14 +14,12 @@ class Story():
         """
         self.noun_prompt = noun_prompt
 
-        story_type = ["1", "2"]
-        self.story_type = random.choice(story_type)
-        
+
         # HERE, WE NEED TO PARSE OUT NOUN PROMPT AND ASSIGN STORY CATEGORY
 
         # generate character and story pieces based on noun prompt
-        self.gen_character(self.story_type)
-        self.gen_story_pieces(self.story_type)
+        self.gen_character("1")
+        self.gen_story_pieces("1")
 
         #instantiate markov sentence generator
             # to use call method: generate_sents_w_noun("dog")
@@ -40,7 +38,7 @@ class Story():
         g = ['male', 'female']
         p = ['first', 'third']
 
-        if self.story_type == "1" or self.story_type == "2":
+        if self.story_type == "1":
             # generate 4 characters; takes: gender, pov, plural
 
             gender = random.choice(g)
@@ -78,7 +76,6 @@ class Story():
         """
         calls section modules to create story
         """
-
         self.action1 = action1.Action1(self).gen_action1()
         self.action2 = action2.Action2(self).gen_action2()
         self.action3 = action3.Action3(self).gen_action3()

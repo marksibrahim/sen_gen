@@ -26,16 +26,6 @@ class Action5():
             self.object_pn = self.story.ch4['first_name']
             self.s8_subject = self.story.ch3['first_name']
             
-        op2 = self.story.ch3['pronoun'] + " couldn't shake the feeling that"
-        op3 = "somehow " + self.story.ch3['pronoun'] + " knew that" 
-            
-        s11_options = ["they always felt as though", op2, op3]    
-        self.s11_options = random.choice(s11_options)
-        
-        s12_options = ["tried not to think about them", "cleaned the house and found some money in a pocket"]
-        self.s12_options = random.choice(s12_options)
-        
-            
     def gen_par1(self):
         
         # s1 = < I > put < my > < box > on the < bookcase> .
@@ -76,26 +66,8 @@ class Action5():
         # s8 = I went to work and came home, went to work and came home, touched the box with my fingertips.
         s8 = self.s8_subject + " " + self.repeat_action + ", touched the " + \
              self.story.symbol['noun'] + " with " + self.story.ch3['possessive'] + " fingertips."
-            
-            
-        # s9 =  I started having the dreams again. They were even stranger. 
-        s9 = self.story.ch3['pronoun'].capitalize() + " started having the dreams again." + \
-             " " + "They were even stranger."
-        
-        # s10 = Markov sentence. Markov sentence. 
-        s10 = "Markov sentence. Markov sentence."
-        
-        # s11 = Yet somehow < list options > they pointed to the < box >.
-        s11 = "Yet " + self.s11_options + " they pointed to the " + self.story.symbol['noun'] + "."
-        
-        
-        # s12 = < I > < options > Then < June > called to get together.     
-        s12 = self.s8_subject + " " + self.s12_options + ". Then " + self.story.ch1['first_name'] + \
-              " called to get together."
-        
               
-        p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7 + " " + s8 + "\n\n" + \
-             s9 + " " + s10 + " " + s11 + " " + s12
+        p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7 + " " + s8
         
         return p1
 

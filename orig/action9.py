@@ -10,18 +10,13 @@ class Action9():
         self.story = our_story
         
         if self.story.ch3['pronoun'] == "I":
-            self.subject = "I"
             self.verb1 = "know"
             self.verb2 = "hold"
             self.verb3 = "feel"
-            self.verb4 = "dream"
         else:
-            self.subject = self.story.ch3['first_name']
             self.verb1 = "knows"
             self.verb2 = "holds"
             self.verb3 = "feels"
-            self.verb4 = "dreams"
-
 
     def gen_par22(self):
         
@@ -38,16 +33,11 @@ class Action9():
         s3 = "It's " + self.story.symbol['adj_weight'] + " and " + \
              self.story.symbol['adj_weight_opposite2'] + " at the same time."
         
-        # He still has the dreams, but maybe they're about something else?
-        s4 = self.subject + " still " + self.verb4 + ", always " + self.verb4 + \
-             ", but maybe they're about something else?"
-        
         # When < I > hold it, < I > feel < hopeful > .
-        s5 = "When " + self.story.ch3['pronoun'] + " " + self.verb2 + " the " + self.story.symbol['noun'] + \
-             " " + self.story.ch3['pronoun'] + " " + self.verb3 + " " + \
-             self.story.theme['resolution_adj'] + "."
+        s4 = "When " + self.story.ch3['pronoun'] + " " + self.verb2 + " it, " + self.story.ch3['pronoun'] + \
+             " " + self.verb3 + " " + self.story.theme['resolution_adj'] + "."
         
-        p22 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5
+        p22 = s1 + " " + s2 + " " + s3 + " " + s4
         
         return p22
     

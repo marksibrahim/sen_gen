@@ -66,23 +66,16 @@ class Action3():
         # s6 = When the lightning struck, it stopped < his > heart.        
         s6 = "When the lightning struck, it stopped " + self.story.ch2['possessive'] + " heart."
 
-        # s7A = < His > hair was burned to the scalp, < his > skin tattooed with fractals 
+        # s7 = < His > hair was burned to the scalp, < his > skin tattooed with fractals 
         #      as < his > capillaries burst.
-        s7A = self.story.ch2['possessive'].capitalize() + " hair was burned to the scalp, " + \
+        s7 = self.story.ch2['possessive'].capitalize() + " hair was burned to the scalp, " + \
              self.story.ch2['possessive'] + " skin tattooed with fractals as " + \
-             self.story.ch2['possessive'] + " capillaries burst. That was more than " + \
-            self.pronoun + " wanted to know."   
-        
-        # s7B = There wasn't a mark on < him >, which was odd, < I > thought. Shouldn't that much 
-        #      energy leave something behind?
-        s7B = "There wasn't a mark on " + self.story.ch2['object_pn'] + ", which was odd, " + \
-              self.pronoun + " thought. Shouldn't that much energy leave something behind?"
-        
-        s7_options = [s7A, s7B]
-        s7 = random.choice(s7_options) 
+             self.story.ch2['possessive'] + " capillaries burst."
 
+        # s8 = That was more than < I > wanted to know.
+        s8 = "That was more than " + self.pronoun + " wanted to know."
 
-        p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7
+        p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7 + " " + s8
 
         return p1
 

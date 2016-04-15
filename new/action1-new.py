@@ -59,16 +59,7 @@ class Action1():
         s5 = "They just knew."
 
 
-        # p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5
-        
-        p1A = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5
-        
-        p1B = s3 + " " + s2 + " " + s4 + " " + s5
-        
-        p1C = s5 + " " + s2 + " " + s4
-        
-        order = [p1A, p1B, p1C]
-        p1 = random.choice(order)
+        p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5
         
         return p1
 
