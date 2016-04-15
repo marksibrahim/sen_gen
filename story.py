@@ -6,6 +6,10 @@ import random
 import action1, action2, action3, action4, action5, action6, action7, action8, action9
 from tools import characters, generate_sentence, story_pieces
 
+from nltk.corpus import wordnet as wn
+from nltk import word_tokenize
+import nltk
+
 class Story():
 
     def __init__(self, noun_prompt):
@@ -13,6 +17,7 @@ class Story():
         global variables for our story
         """
         self.noun_prompt = noun_prompt
+        self.noun_prompt_obj = Noun_Prompt(noun_prompt)
 
         story_type = ["1", "2"]
         self.story_type = random.choice(story_type)
@@ -94,6 +99,70 @@ class Story():
                "\n\n" + self.action5 + "\n\n" + self.action6 + "\n\n" + self.action7 + "\n\n" + \
                self.action8 + "\n\n" + self.action9
 
+class Noun_Prompt():
+    """
+    stores and processes given noun_prompt
+    """
+    def __init__(self, noun_prompt):
+        self.noun_prompt = noun_prompt
+
+        self.category = self.categorize(self.noun_prompt)
+        self.abstraction = self.check_abstraction()
+        
+        self.noun = noun_prompt
+        self.adj = []
+        self.check_adj()
+
+    def check_abstraction(self):
+        """
+        checks whether noun prompt is abstraction
+        """
+        try:
+            if "abstraction" in self.category:
+                return True
+            else:
+                return False
+        except TypeError:
+            return False
+
+    def categorize(self, noun, level=1):
+        """
+        returns a category for the given noun
+        """
+        try: 
+          noun_syns = wn.synsets(noun, 'n')[0]
+          category = noun_syns.hypernym_paths()[0][level]
+          return category.name()
+        except IndexError:
+          return False
+
+    def check_adj(self):
+        """
+        if noun isn't categorized, function attempts to 
+        split into adj and noun parts
+        """
+        if self.category: 
+            return False
+        else:
+            text = word_tokenize(self.noun_prompt)
+            self.adj = []
+            for i, w in enumerate(nltk.pos_tag(text)):
+                if "JJ" in w[1]:
+                    self.adj.append(w[0])
+                else:
+                    self.noun = w[0]
+        try:
+            self.category = self.categorize(self.noun)
+            self.abstraction = self.check_abstraction(self)
+        except:
+            self.abstraction = False
+            self.category = False
+
+            
+        
+
+
+          
 
 if __name__ == "__main__":
     our_story = Story("dog")
