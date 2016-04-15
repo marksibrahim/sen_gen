@@ -78,12 +78,20 @@ class Action5():
              self.story.symbol['noun'] + " with " + self.story.ch3['possessive'] + " fingertips."
             
             
+        if self.story.noun_prompt_obj.abstraction:
+            abstract_article = ""
+        else:
+            abstract_article = "the"
+        
         # s9 =  I started having the dreams again. They were even stranger. 
         s9 = self.story.ch3['pronoun'].capitalize() + " started having the dreams again." + \
              " " + "They were even stranger."
         
         # s10 = Markov sentence. Markov sentence. 
-        s10 = "Markov sentence. Markov sentence."
+        s10A = "They always started with a dog saying, \"" +  self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ".\""
+        
+        s10B = "And then the man would say, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ",\" which made no sense." 
+        s10 = s10A + " " + s10B
         
         # s11 = Yet somehow < list options > they pointed to the < box >.
         s11 = "Yet " + self.s11_options + " they pointed to the " + self.story.symbol['noun'] + "."
