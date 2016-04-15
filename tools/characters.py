@@ -15,16 +15,18 @@ class Character():
         self.gender = gender
         self.pov = pov
         self.plural = plural
-
+        self.male_names = self.get_names("m")
+        self.female_names = self.get_names("f")
+        
     def create_character(self):
         '''
         returns a character name based given gender
         '''
         if self.gender == 'male':
-            first_name = random.choice([(name) for name in names.words('male.txt')])
+            first_name = random.choice(self.male_names)
             ch = {'gender': 'male', 'first_name': first_name}
         else:
-            first_name = random.choice([(name) for name in names.words('female.txt')])
+            first_name = random.choice(self.female_names)
             ch = {'gender': 'female', 'first_name': first_name}
 
         '''
@@ -115,3 +117,21 @@ class Character():
             ch.update(pronouns)
 
         return ch
+
+    def get_names(self, gender):
+        if gender == "m":
+            path = "male_names.txt"
+            alternate_path = "tools/male_names.txt"
+        else: 
+            path = "female_names.txt"
+            alternate_path = "tools/female_names.txt"
+        names = []
+        try:
+            with open(path, "r") as f:
+                for name in f:
+                    names.append(name.strip().title())
+        except FileNotFoundError:
+            with open(alternate_path, "r") as f:
+                for name in f:
+                    names.append(name.strip().title())
+        return names
