@@ -38,7 +38,7 @@ class Action9():
         s3 = "It's " + self.story.symbol['adj_weight'] + " and " + \
              self.story.symbol['adj_weight_opposite2'] + " at the same time."
         
-        # He still has the dreams, but maybe they're about something else?
+        # < I > still < dream >, always < dream >, but maybe they're about something else?
         s4 = self.subject + " still " + self.verb4 + ", always " + self.verb4 + \
              ", but maybe they're about something else?"
         
