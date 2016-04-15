@@ -31,7 +31,7 @@ class Sentences():
         return sentence_list[:-1]
 
 
-    def generate_sents_w_noun(self, noun, num=5):
+    def gen_many_sents_w_noun(self, noun, num=5):
         """
         generates the given number of sentences with the given noun
         returns a list of sentences
@@ -46,6 +46,20 @@ class Sentences():
             if len(sentences) > num:
                 break
         return sentences
+
+    def generate_sents_w_noun(self, noun):
+        """
+        generates a sentence based on noun with fewer than 10 words
+        and cleans punctuation
+        """
+        for i in range(10):
+            sentences = self.gen_many_sents_w_noun(noun, num=10)
+            for sentence in sentences:
+                if len(sentence.split()) < 10:
+                    sentence = sentence.strip(".?!")
+                    sentence = sentence.replace("\"", "")
+                    return [sentence.replace("\"", "")]
+        return False
 
     def generate_sents_w_many_nouns(self, nouns, num=2):
         sentences = [] 

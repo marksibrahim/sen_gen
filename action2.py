@@ -1,5 +1,4 @@
 import random
-from tools import check_markov
 
 class Action2():
     """
@@ -114,7 +113,7 @@ class Action2():
         else:
             abstract_article = "the "
             
-        first_letter = self.story.noun_prompt_obj.abstraction[:1]
+        first_letter = self.story.noun_prompt_obj.noun[:1]
         
         if first_letter == "a" or first_letter == "e" or first_letter == "i" or first_letter == "o" or first_letter == "u":
             second_article = "an "
@@ -128,7 +127,8 @@ class Action2():
 
         s9 = "A man would say, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ".\""
         
-        s10 = " And I would reply, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ".\" It was unsettling. Why was I dreaming about " + second_article + self.story.noun_prompt_obj.noun)[0] + "?"
+        s10 = " And I would reply, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0]  
+        s10 += ".\" It was unsettling. Why was I dreaming about " + second_article + self.story.noun_prompt_obj.noun + "?"
         
         s11 = self.subject + " thought it was because " + self.story.ch3['possessive'] + " " + \
               self.s11_phrase + " just outside of " + self.story.ch3['possessive'] + " reach."  
