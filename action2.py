@@ -1,4 +1,5 @@
 import random
+from tools import check_markov
 
 class Action2():
     """
@@ -107,17 +108,27 @@ class Action2():
              self.body_part_v1 + " and " + self.story.ch3['pronoun'] + " wanted to " + \
              self.body_part_v2 + " that " + self.body_part_phrase + " " + self.story.ch3['object_pn'] + "."
         
+        
         if self.story.noun_prompt_obj.abstraction:
             abstract_article = ""
         else:
-            abstract_article = "the"
-
-        s8 = "That was when " + self.story.ch3['pronoun'] + " started having the dreams about "  + abstract_article + \
-             " " + self.story.noun_prompt + "."
+            abstract_article = "the "
             
-        s9 = self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0]
+        first_letter = self.story.noun_prompt_obj.abstraction[:1]
         
-        s10 = self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0]
+        if first_letter == "a" or first_letter == "e" or first_letter == "i" or first_letter == "o" or first_letter == "u":
+            second_article = "an "
+        elif self.story.noun_prompt_obj.abstraction:
+            second_article = ""
+        else:
+            second_article = "a "
+
+            
+        s8 = "That was when " + self.story.ch3['pronoun'] + " started having the dreams about "  + abstract_article + self.story.noun_prompt + "."
+
+        s9 = "A man would say, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ".\""
+        
+        s10 = " And I would reply, \"" + self.story.gen_sentences.generate_sents_w_noun(self.story.noun_prompt_obj.noun)[0] + ".\" It was unsettling. Why was I dreaming about " + second_article + self.story.noun_prompt_obj.noun)[0] + "?"
         
         s11 = self.subject + " thought it was because " + self.story.ch3['possessive'] + " " + \
               self.s11_phrase + " just outside of " + self.story.ch3['possessive'] + " reach."  
