@@ -47,6 +47,22 @@ class Sentences():
                 break
         return sentences
 
+    def generate_sents_w_many_nouns(self, nouns, num=2):
+        sentences = [] 
+        for i in range(num*2500):
+            sents = self.generate_sentence()
+            for sent in sents:
+                found = True
+                for noun in nouns:
+                    if noun not in sent:
+                        found = False
+                        break
+                if found:
+                    sentences.append(sent)
+            #exit if enough sentences are generated
+            if len(sentences) > num:
+                break
+        return sentences
 
 
 class Markov(object):

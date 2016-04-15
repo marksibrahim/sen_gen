@@ -48,7 +48,7 @@ class Action1():
         p1_phrase = self.story.theme['phrase']
         poss_p1_phrase = p1_phrase.replace('possessive', 'their')
         
-        s4B = poss_p1_phrase + "."
+        s4B = poss_p1_phrase
         
         # s4C they knew
         s4C = "they knew"

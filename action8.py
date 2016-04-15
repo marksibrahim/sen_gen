@@ -18,6 +18,14 @@ class Action8():
         self.contact_v2 = "texted"
         self.place = "restaurant"
 
+        if self.story.ch3['pronoun'] == "I":
+            self.subject = "I"
+            self.object_pn = "her"
+            self.subject_possessive = "my"
+        else:
+            self.subject = self.story.ch3['first_name']
+            self.object_pn = self.story.ch1['first_name']
+            self.subject_possessive = self.story.ch3['first_name'] + "'"
         
     def gen_par18(self):
         
@@ -32,11 +40,11 @@ class Action8():
             s1 ="The leaves were falling off the trees, the sun arcing lower across the sky."
             
         # s2 & s3 = < I > < emailed > < June >.  < I > < texted > < her >.
-        s2 = self.story.ch3['pronoun'] + " " + self.contact_v1 + " " + self.story.ch1['first_name'] + "."
-        s3 = self.story.ch3['pronoun'] + " " + self.contact_v2 + " " + self.story.ch1['object_pn'] + "."
+        s2 = self.subject + " " + self.contact_v1 + " " + self.story.ch1['first_name'] + "."
+        s3 = self.story.ch3['pronoun'].capitalize() + " " + self.contact_v2 + " " +  self.story.ch1['object_pn'] + "."
         
         # s4 = Finally I saw her at a restaurant and waited until she was leaving.
-        s4 = "Finally " + self.story.ch3['pronoun'] + " saw " + self.story.ch1['object_pn'] + \
+        s4 = "Finally " + self.story.ch3['pronoun'] + " saw " + self.story.ch1['first_name'] + \
              " at a " + self.place + " and waited until " + self.story.ch1['pronoun'] + " was leaving."         
         
         p18 = s1 + " " + s2 + " " + s3 + " " + s4
@@ -49,12 +57,12 @@ class Action8():
         # This dialogue is p19 - p21.
         
         # p19 -- "I'm sorry," < I > said.  "I didn't know."  
-        s1A = "\"I'm sorry,\" " + self.story.ch3['pronoun'] + " said."
+        s1A = "\"I'm sorry,\" " + self.subject + " said."
         s1B = "\"I didn't know.\""
         s1 = s1A + " " + s1B
         
         # p19 -- < She > turned to leave.
-        s2 = self.story.ch1['pronoun'].capitalize() + " turned to leave."
+        s2 = self.story.ch1['first_name'] + " turned to leave."
         
         # p19 -- "I don't know how < love > can < die > so easily. Can it really?"
         s3 = "\"I don't know how " +  self.story.theme['noun'] + " can " + \
@@ -63,10 +71,10 @@ class Action8():
         p19 = s1 + " " + s2 + " " + s3
         
         # p20 -- She put a hand on my arm.
-        s4 = self.story.ch1['pronoun'].capitalize() + " put a hand on " + self.story.ch3['possessive'] + " arm."
+        s4 = self.story.ch1['first_name'] + " put a hand on " + self.subject_possessive + " arm."
         
         # p20 -- Her mouth opened and I thought she would say, "Yes."  Or maybe "No."
-        s5 = self.story.ch1['possessive'].capitalize() + " mouth opened and " + self.story.ch3['pronoun'] + \
+        s5 = self.story.ch1['possessive'].capitalize() + " mouth opened and " + self.subject + \
              " thought " + self.story.ch1['pronoun'] + " would say, \"Yes.\"  Or maybe \"No.\""
         
         # p20 -- It didn't matter which one.        
@@ -75,13 +83,13 @@ class Action8():
         p20 = s4 + " " + s5 + " " + s6 
         
         # p21 -- "Is it so fragile?" I said as she shook her head and left.   
-        s7 = "\"Is it so " + self.story.theme['adj_question'] + "?\" " + self.story.ch3['pronoun'] + \
-             " said as " + self.story.ch1['pronoun'] + " shook " + self.story.ch1['possessive'] + \
+        s7 = "\"Is it so " + self.story.theme['adj_question'] + "?\" " + self.subject + \
+             " said as " + self.story.ch1['first_name'] + " shook " + self.story.ch1['possessive'] + \
              " head and left."
         
         p21 = s7
 
-        dialogue3 = p19 + '\n' + p20 + '\n' + p21
+        dialogue3 = p19 + '\n\n' + p20 + '\n\n' + p21
         
         return dialogue3
 
@@ -90,7 +98,7 @@ class Action8():
                   
         par18 = self.gen_par18()
         dialogue3 = self.gen_dialogue3()
-        action8 = par18 + '\n' + dialogue3
+        action8 = par18 + '\n\n' + dialogue3
 
         return action8
     

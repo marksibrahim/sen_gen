@@ -42,15 +42,27 @@ class Action4():
         self.gift_recipients = "us each"
         self.gift_how = "in our hands"
 
+        if self.story.ch3['pronoun'] == "I":
+            self.pronoun = "I"
+        else:
+            self.pronoun = self.story.ch3['first_name']
+            
+        if self.story.ch3['pronoun'] == "I":
+            self.possessive = "my"
+        else:
+            self.possessive = self.story.ch3['first_name'] + "'s"
+            
 
     def gen_par1(self):
         
         # < I > < sat > < in the first row > < at the funeral >.
-        s1 = self.story.ch3['pronoun'] + " " + self.story.event['relationship']['event2_v'] +               " " + self.story.event['relationship']['location'] + " " +               self.story.event['relationship']['event2'] + "."
+        s1 = self.pronoun + " " + self.story.event['relationship']['event2_v'] + \
+             " " + self.story.event['relationship']['location'] + " " + \
+             self.story.event['relationship']['event2'] + "."
 
         # < June > was < my > < best friend >.
         s2 = self.story.ch1['first_name'] + " was " + self.story.ch3['possessive'] + \
-             " " + self.relation + "."
+             " " + self.relation
 
         if self.relation == 'business partner' and self.story.ch1['gender'] == 'male':
             s2 = s2 + ", but he was more than that."
@@ -63,7 +75,7 @@ class Action4():
         s3 = self.ground_state1.capitalize() + " because it had been " + self.weather_verb + "."
 
         # < My > < heels sucked > into the < mud >, not wanting to let go.
-        s4 = self.story.ch3['possessive'] + " " + self.feet + " into the " + \
+        s4 = self.story.ch3['possessive'].capitalize() + " " + self.feet + " into the " + \
              self.ground_state2 + ", not wanting to let go."
 
         p1 = s1 + " " + s2 + " " + s3 + " " + s4
@@ -96,16 +108,16 @@ class Action4():
 
     def gen_pars3_4(self):
 
-        # < She > shook < her > head and < I > < placed a hand on her arm >.
-        s1 = self.story.ch1['pronoun'].capitalize() + " shook " + self.story.ch1['possessive'] + \
-             " head and " + self.story.ch3['pronoun'] + " " + self.poss_action + "."
+        # < She > shook < her > head and < placed a hand on > < her > arm.
+        s1 = self.story.ch1['first_name'].capitalize() + " shook " + self.story.ch1['possessive'] + \
+             " head and placed a hand on " + self.possessive + " arm."
         
         # < The ground was soft > < but > < he > < wasn't > < buried >.
         if self.story.season['action4'] == "winter":
             s2 = self.story.ch2['first_name'] + " wasn't " + \
                  self.story.event['relationship']['event2_v2'] + "."
         else:
-            s2 = self.ground_state1.capitalize() + " but " + self.story.ch2['pronoun'] + \
+            s2 = self.ground_state1.capitalize() + " but " + self.story.ch2['first_name'] + \
                  " wasn't " + self.story.event['relationship']['event2_v2'] + "."
         
         # < June > gave < us each > a small box of stone, hollow in the center, 
@@ -113,7 +125,7 @@ class Action4():
         s3 = self.story.ch1['first_name'] + " gave " + self.gift_recipients + " a " + \
              self.story.symbol['adj_aux'] + " " + self.story.symbol['noun'] + " of " + \
              self.story.symbol['adj'] + ", " + self.story.symbol['adj_prop'] + ", " + \
-             self.story.ch2['possessive'] + " " + self.story.event['relationship']['noun'] + \
+            self.story.ch2['first_name'] + "'s " + self.story.event['relationship']['noun'] + \
              " " + self.story.symbol['adj_weight'] + " and " + self.story.symbol['adj_weight_opposite1'] + \
              " " + self.gift_how + "."
         
@@ -123,7 +135,7 @@ class Action4():
     
     def gen_action4(self):
 
-        action4 = self.gen_par1() + '\n' + self.gen_dialogue1() + '\n' + self.gen_pars3_4()
+        action4 = self.gen_par1() + '\n\n' + self.gen_dialogue1() + '\n\n' + self.gen_pars3_4()
 
         return action4
 

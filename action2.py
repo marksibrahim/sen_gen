@@ -8,18 +8,19 @@ class Action2():
     def __init__(self, our_story):
         self.story = our_story
 
-        if self.story.season['winter'] == "winter":
-            self.setting = ["in a hilltop chapel", 
+        if self.story.season['action2'] == "winter":
+            setting = ["in a hilltop chapel", 
                             "in a repurposed factory in SoDo", 
                             "at ranch in Napa Valley", 
                             "at someone's parent's enormous house in the suburbs"
                            ]
         else:
-            self.setting = ["under St. John's Bridge", 
+            setting = ["under St. John's Bridge", 
                             "in a repurposed factory in SoDo", 
                             "on a wide green lawn", 
                             "in a hilltop chapel", 
                             "at someone's parent's enormous house in the suburbs"]
+        self.setting = random.choice(setting)
         
         self.weather_adj1 = "dry"
         self.weather_adj2 = "cold"
@@ -29,7 +30,7 @@ class Action2():
         self.body_part_adj = "dry"
         self.body_part_v1 = "stuck out"
         self.body_part_v2 = "cry"
-        self.body_part_phrase = "it wouldn't lay down for me"
+        self.body_part_phrase = "it wouldn't lay down for"
         
         self.metaphor1 = "was floating out from"
         self.metaphor2 = "head as though a magnet were pulling the ends away from"
@@ -69,10 +70,10 @@ class Action2():
              self.story.theme['action1_adj'] + "."
         
         # s7 = < My > < hair > < stuck out > and < I > wanted to < cry > that 
-        #      < it wouldn't lay down for me >.
+        #      < it wouldn't lay down for > me.
         s7 = self.story.ch3['possessive'].capitalize() + " " + self.body_part1 + " " + \
              self.body_part_v1 + " and " + self.story.ch3['pronoun'] + " wanted to " + \
-             self.body_part_v2 + " that " + self.body_part_phrase + "."
+             self.body_part_v2 + " that " + self.body_part_phrase + " " + self.story.ch3['object_pn'] + "."
 
         
         p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7

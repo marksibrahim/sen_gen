@@ -1,5 +1,4 @@
 import random
-from collections import defaultdict
 
 """
 SEASONS: randomly generates a dictionary of seasons-by-plot-section for story 1
@@ -37,17 +36,17 @@ SETTINGS
 
 def gen_setting_sentences():
 
-    setting_sAB = defaultdict(dict)
-
-    setting_sAB['fall']['sA'] = "the wind was blowing so hard, "
-    setting_sAB['fall']['sB'] = "the air rushed into their mouths until they couldn't breathe"
-    setting_sAB['fall']['sC'] = "the wind was blowing so hard it sucked the breath out of the sparrows"
-    setting_sAB['winter']['sA'] = "it was so cold the walnut trees were exploding like gunshots, "
-    setting_sAB['winter']['sB'] = "the air was so thin it was hard to breath"
-    setting_sAB['spring']['sA'] = "the sky was stuffed round with rain clouds"
-    setting_sAB['spring']['sB'] = "the air was a shimmering gray that was hard to look at"
-    setting_sAB['summer']['sA'] = "it was so hot the grass was laying down yellow in exhaustion"
-    setting_sAB['summer']['sB'] = "the air was so heavy it was hard to breath"
+    setting_sAB = {
+        'fall': {'sA': "the wind was blowing so hard, ", 
+                 'sB': "the air rushed into their mouths until they couldn't breathe", 
+                 'sC': "the wind was blowing so hard it sucked the breath out of the sparrows"},  
+      'winter': {'sA': "it was so cold the walnut trees were exploding like gunshots", 
+                 'sB': "the air was so thin it was hard to breath"},  
+      'spring': {'sA': "the sky was stuffed round with rain clouds", 
+                 'sB': "the air was a shimmering gray that was hard to look at"}, 
+      'summer': {'sA': "it was so hot the grass was laying down yellow in exhaustion", 
+                 'sB': "the air was so heavy it was hard to breath"}
+                   }
 
     return setting_sAB
 
@@ -57,18 +56,18 @@ PLACES
 """
 def gen_event(story_type):
 
-  if story_type == 1:
+    if story_type == "1":
 
-    event = defaultdict(dict)
-
-    event['relationship']['event1'] = "wedding"
-    event['relationship']['event1_v'] = "was sitting"
-    event['relationship']['event2'] = "at the funeral"
-    event['relationship']['event2_v'] = "sat"
-    event['relationship']['location'] = "in the first row"
-    event['relationship']['event2_v2'] = "buried"
-    event['relationship']['noun'] = "ashes"
-
+        event = {'relationship': {  
+                      'event1': "wedding", 
+                    'event1_v': "was sitting", 
+                      'event2': "at the funeral", 
+                    'event2_v': "sat", 
+                    'location': "in the first row", 
+                   'event2_v2': "buried", 
+                        'noun': "ashes"
+                   }
+                }
     return event
 
 
@@ -110,7 +109,7 @@ symbol[]
 """
 def gen_symbols(story_type):
 
-  if story_type == 1:
+  if story_type == "1":
 
     noun = "box"
     assoc_noun = "bookcase"
@@ -145,7 +144,7 @@ a1_surprise[]
 """
 def gen_action1_and_surprise(story_type):
     
-  if story_type == 1:
+  if story_type == "1":
 
     action1_vb = "got married"
     action1_vb_entail_vb = "wasn't invited"
