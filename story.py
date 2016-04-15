@@ -76,21 +76,21 @@ class Story():
         """
         calls section modules to create story
         """
+
         self.action1 = action1.Action1(self).gen_action1()
+        self.action2 = action2.Action2(self).gen_action2()
+        self.action3 = action3.Action3(self).gen_action3()
+        self.action4 = action4.Action4(self).gen_action4()
+        self.action5 = action5.Action5(self).gen_action5()
+        self.action6 = action6.Action6(self).gen_action6() 
+        self.action7 = action7.Action7(self).gen_action7()
+        self.action8 = action8.Action8(self).gen_action8()
+        self.action9 = action9.Action9(self).gen_action9()
 
-        '''
-        self.action2 = action2.Action1(self).gen_action2()
-        self.action3 = action3.Action1(self).gen_action3()
-        self.action4 = action4.Action1(self).gen_action4()
-        self.action5 = action5.Action1(self).gen_action5()
-        self.action6 = action6.Action1(self).gen_action6()
-        self.action7 = action7.Action1(self).gen_action7()
-        self.action8 = action8.Action1(self).gen_action8()
-        self.action9 = action9.Action1(self).gen_action9()
 
-        '''
-
-        return self.action1 + "\n"
+        return self.action1 + "\n\n" + self.action2 + "\n\n" + self.action3 + "\n\n" + self.action4 + \
+               "\n\n" + self.action5 + "\n\n" + self.action6 + "\n\n" + self.action7 + "\n\n" + \
+               self.action8 + "\n\n" + self.action9
 
 
 if __name__ == "__main__":

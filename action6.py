@@ -17,8 +17,10 @@ class Action6():
         # par9 s1
         if self.story.ch3['pronoun'] == "I":
             self.pronoun = "We"
+            self.s2_speaker = "I"
         else:
             self.pronoun = "They"
+            self.s2_speaker = self.story.ch3['first_name']
             
         # p9 s1
         activity = ["met for coffee", "met for drinks"]
@@ -34,7 +36,7 @@ class Action6():
         elif self.story.season['action6'] == "winter":
             self.ch_state = "in a reckless flurry of snowflakes, wrapped in red wool"
         elif self.story.season['action6'] == "spring":
-            self.ch_state = "with a sudden spring shower, shaking raindrops from her coat"
+            self.ch_state = "with a sudden spring shower, shaking raindrops from a sleek black coat"
         elif self.story.season['action6'] == "summer":
             self.ch_state = "in a whirlwind of apology, cheeks flushed, arms lean and tan"
 
@@ -68,13 +70,13 @@ class Action6():
         
         # s1 = "I can't tell anyone else," < she > said. 
         #      "But I didn't < love > < Charlie >. Not after we < married >."            
-        s1A = "\"I can't tell anyone else,\"" + self.story.ch1['pronoun'] + " said." 
+        s1A = "\"I can't tell anyone else,\" " + self.story.ch1['pronoun'] + " said." 
         s1B = "\"But I didn't " + self.story.theme['verb'] + " " + self.story.ch2['first_name'] + "."
         s1C = "Not after we " + self.story.a1_surprise['action1_vb'] + ".\""
         s1 = s1A + " " + s1B + " " + s1C
         
         # s2 = "But the < summer > day," < I > said. " < You knew. You knew > ."
-        s2A = "\"But the " + self.story.season['opening'] + " day,\" " + self.story.ch3['pronoun'] + " said."
+        s2A = "\"But the " + self.story.season['action1'] + " day,\" " + self.s2_speaker + " said."
         s2B = "\"" + self.response1 + "\""
         s2 = s2A + " " + s2B
         
@@ -107,7 +109,7 @@ class Action6():
         # s6 = "No," < I > said.
         s6 = "No,\"" + " " + self.story.ch3['pronoun'] + " said."
 
-        dialogue2 = s1 + '\n' + s2 + '\n' + s3 + '\n' + s4 + '\n' + s5 + '\n' + s6
+        dialogue2 = s1 + '\n\n' + s2 + '\n\n' + s3 + '\n\n' + s4 + '\n\n' + s5 + '\n\n' + s6
         
         return dialogue2
    
@@ -136,7 +138,7 @@ class Action6():
         par9 = self.gen_par9()
         dialogue2 = self.gen_dialogue2()
         par16 = self.gen_par16()
-        action6 = par9 + '\n' + dialogue2 + '\n' + par16
+        action6 = par9 + '\n\n' + dialogue2 + '\n\n' + par16
 
         return action6
     

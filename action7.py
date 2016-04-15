@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
 import random
 
 class Action7():
@@ -28,17 +23,25 @@ class Action7():
             self.subject = "I"
         else:
             self.subject = self.story.ch3['first_name']
-       
+            
+        addtl_ch = self.story.a1_surprise['action1_vb_addtl_ch']
+
+        if self.story.ch2['gender'] == "female" and addtl_ch == "the groom":
+            self.addtl_ch = "The bride"
+        else:
+            self.addtl_ch = "The groom"
         
-    def gen_par17(self):
+
+        
+    def gen_par1(self):
     
         # s1 = < June > < got married > again < on a beach in Bermuda >.
-        s1 = self.story.ch1['first_name'] + " " + self.story.action1_vb['action1_vb'] + \
+        s1 = self.story.ch1['first_name'] + " " + self.story.a1_surprise['action1_vb'] + \
              " again " + self.location + "."
         
         # s2 = < The groom > had < a condo > there, < I > heard.        
-        s2 = self.story.a1_surprise['action1_vb_addtl_ch'].capitalize() + " had " + \
-             self.story.a1_surprise['action1_vb_addtl_ch_possession'] + " there, " + self.subject + " heard."
+        s2 = self.addtl_ch + " had " + self.story.a1_surprise['action1_vb_addtl_ch_possession'] + \
+             " there, " + self.subject + " heard."
         
         # s3 = < I > < wasn't invited >.        
         s3 = self.story.ch3['pronoun'].capitalize() + " " + self.story.a1_surprise['action1_vb_entail_vb'] + "."
@@ -63,11 +66,12 @@ class Action7():
         s8 = "But " + self.story.ch3['pronoun'] + " couldn't convince " + self.story.ch3['reflexive_pn'] + "."
 
         p17 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7 + " " + s8
+        
+        return p17
     
         
     def gen_action7(self):
 
-        action7 = self.gen_par17()
+        action7 = self.gen_par1()
 
         return action7
-
