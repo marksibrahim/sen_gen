@@ -59,7 +59,8 @@ class Sentences():
                     sentence = sentence.strip(".?!")
                     sentence = sentence.replace("\"", "")
                     return [sentence.replace("\"", "")]
-        return False
+        generic_sents = ["A " + noun + " is an expense", "She looks like a " + noun]
+        return [random.choice(generic_sents)]
 
     def generate_sents_w_many_nouns(self, nouns, num=2):
         sentences = [] 
@@ -136,8 +137,11 @@ class Markov(object):
 		seed_words = self.words_at_position(seed)[:-1]
 		gen_words.extend(seed_words)
 		for i in range(size):
-			last_word_len = self.chain_size - 1
-			last_words = gen_words[-1 * last_word_len:]
-			next_word = random.choice(self.cache[tuple(last_words)])
-			gen_words.append(next_word)
+                    last_word_len = self.chain_size - 1
+                    last_words = gen_words[-1 * last_word_len:]
+                    try:
+                        next_word = random.choice(self.cache[tuple(last_words)])
+                    except:
+                        next_word = "dog"
+                    gen_words.append(next_word)
 		return ' '.join(gen_words)

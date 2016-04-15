@@ -2,6 +2,7 @@
 authors a short story based on a noun prompt
 """
 
+import sys
 import random
 import action1, action2, action3, action4, action5, action6, action7, action8, action9
 from tools import characters, generate_sentence, story_pieces
@@ -160,5 +161,16 @@ class Noun_Prompt():
 
 
 if __name__ == "__main__":
-    our_story = Story("dog")
-    print(our_story.author_story())
+    try:
+        noun_prompt = sys.argv[1:][0]
+        our_story = Story(noun_prompt)
+        print(our_story.author_story())
+    except:
+        try:
+            noun_prompt = sys.argv[1:][0]
+            our_story = Story(noun_prompt)
+            print(our_story.author_story())
+        except:
+            noun_prompt = sys.argv[1:][0]
+            our_story = Story(noun_prompt)
+            print(our_story.author_story())
