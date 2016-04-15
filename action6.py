@@ -98,7 +98,7 @@ class Action6():
         #       In love with < love >. In love with something else maybe." < She > shrugged. 
         #      "Who knows? Am I a terrible person?"
         s5A = "\"I don't know.\""
-        s5B = self.story.ch1['pronoun'].capitalize() + " " + self.poss_sipped_choice + "."
+        s5B = self.story.ch1['first_name'].capitalize() + " " + self.poss_sipped_choice + "."
         s5C = "\"I'm too " + self.story.theme['adj'] + ". In love with " +  self.story.theme['noun'] + \
               ". In love with something else maybe.\""
         s5D = self.story.ch1['pronoun'].capitalize() + " shrugged."
@@ -107,7 +107,7 @@ class Action6():
         s5 = s5A + " " + s5B + " " + s5C + " " + s5D + " " + s5E
         
         # s6 = "No," < I > said.
-        s6 = "No,\"" + " " + self.story.ch3['pronoun'] + " said."
+        s6 = "\"No,\"" + " " + self.story.ch3['pronoun'] + " said."
 
         dialogue2 = s1 + '\n\n' + s2 + '\n\n' + s3 + '\n\n' + s4 + '\n\n' + s5 + '\n\n' + s6
         

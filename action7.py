@@ -52,7 +52,7 @@ class Action7():
         
         # s5 = Maybe < Charlie > was < lucky >, < I > thought.
         s5 = "Maybe " + self.story.ch2['first_name'] + " was " + \
-             self.story.a1_surprise['surprise_opposite_adj'] + ", " + self.story.ch3['pronoun'] + " thought."
+             self.story.a1_surprise['surprise_opposite_adj'] + ", " + self.story.ch3['first_name'] + " thought."
         
         # s6 = Maybe < I > was < lucky > < to be alone > with the < box >.
         s6 = "Maybe " + self.story.ch3['pronoun'] + " was " + self.story.a1_surprise['surprise_opposite_adj'] + \

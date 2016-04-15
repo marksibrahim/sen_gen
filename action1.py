@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
 import random
 from collections import defaultdict
 
@@ -65,7 +60,7 @@ class Action1():
         
         p1B = s3 + " " + s2 + " " + s4 + " " + s5
         
-        p1C = s5 + " " + s2 + " " + s4
+        p1C = s5 + " " + s2 + " " + self.protags + " would tell their " + self.relations + " that the " + self.moment + " they " + self.action
         
         order = [p1A, p1B, p1C]
         p1 = random.choice(order)

@@ -39,13 +39,14 @@ class Action4():
         action = "placed a hand on possessive arm"
         self.poss_action = action.replace('possessive', self.story.ch1['possessive'])
         
-        self.gift_recipients = "us each"
         self.gift_how = "in our hands"
 
         if self.story.ch3['pronoun'] == "I":
             self.pronoun = "I"
+            self.gift_recipients = "us each"
         else:
             self.pronoun = self.story.ch3['first_name']
+            self.gift_recipients = "them each"
             
         if self.story.ch3['pronoun'] == "I":
             self.possessive = "my"

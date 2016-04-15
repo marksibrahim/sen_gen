@@ -133,7 +133,7 @@ class Action2():
         s11 = self.subject + " thought it was because " + self.story.ch3['possessive'] + " " + \
               self.s11_phrase + " just outside of " + self.story.ch3['possessive'] + " reach."  
             
-        s12 = "And then one day, they stopped."
+        s12 = "And then one day, the dreams stopped."
 
         
         p1 = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5 + " " + s6 + " " + s7 + "\n\n" + \
