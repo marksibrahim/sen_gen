@@ -5,7 +5,7 @@ authors a short story based on a noun prompt
 import sys
 import random
 import action1, action2, action3, action4, action5, action6, action7, action8, action9
-from tools import characters, generate_sentence, story_pieces
+import characters, generate_sentence, story_pieces
 
 from nltk.corpus import wordnet as wn
 from nltk import word_tokenize
